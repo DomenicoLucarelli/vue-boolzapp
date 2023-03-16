@@ -8,6 +8,13 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <!-- VUE -->
@@ -18,6 +25,107 @@
 
     
     <div id="app">
+
+        <div class="container">
+            <section class="upper">
+
+            </section>
+
+            <section class="lower">
+
+            </section>
+
+            <div class="app-container">
+
+                <div class="left-app-container">
+
+                    <nav class="left-nav">
+
+                        <div class="img-container">
+                            <img src="img/avatar_io.jpg" alt="">
+                            <span>Sofia</span>
+                        </div>
+
+                        <div class="options">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                        </div>
+
+                    </nav>
+
+                    <div class="notification-alert">
+                        <div class="bell">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+
+                       <div class="text">
+                            <span>Ricevi notifiche di nuovi messaggi</span>
+                            <a href="">attiva notifiche desktop</a>
+                       </div>
+                    </div>
+
+                    <div class="search-bar">
+                        <div class="icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+
+                    <div class="user" v-for="(element, index) in contacts ">
+
+                        <div class="img-container right-img-container">
+                            <img :src="element.avatar" alt="">
+
+                            <div class="text-right-container">
+
+                                <span>{{element.name}}</span> 
+                                <span class="last-log"> {{element.messages[element.messages.length - 1].message}} </span>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="right-app-container">
+
+                    <nav class="right-nav">
+
+                        <div class="img-container right-img-container">
+                            <img src="img/avatar_io.jpg" alt="">
+
+                            <div class="text-right-container">
+
+                                <span>Sofia</span> 
+                                <span class="last-log">ultimo accesso</span>
+
+                            </div>
+                        </div>
+
+                        
+                    </nav>
+
+                    <section class="input-message-zone">
+                        <div class="emoji">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <div class="input-message-area">
+                            <input type="text" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div class="mic">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </section>
+
+                </div>
+
+            </div>
+
+
+        </div>
 
     </div>
 
