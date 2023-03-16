@@ -170,6 +170,18 @@ const { createApp } = Vue
 
         // creo un indice che cambia qunado clicco su un utente
         activeIndex : 0,
+
+        newMessage : {
+            date: '',
+            message: '',
+            status: 'sent'
+        },
+
+        newReceivedMessage :{
+            date: '',
+            message: 'Ok',
+            status: 'received'
+        }
       
       }
     },
@@ -180,6 +192,21 @@ const { createApp } = Vue
 
       showChat(index){
         this.activeIndex = index
+      },
+    //   creo funzione che invia nell'array un oggetto al giusto indice
+      send(){
+        this.contacts[this.activeIndex].messages.push(this.newMessage)
+        this.newMessage = {
+            date: '',
+            message: '',
+            status: 'sent'
+        }
+        // creo funzione timeout che al click di enter richiama la funzione receivedMessage
+        setTimeout(this.receivedMessage,1000)
+      },
+    //   creo funzione che mi pusha nell'array al giusto indice un oggetto che è la risposta al mio messaggio
+      receivedMessage(){
+        this.contacts[this.activeIndex].messages.push(this.newReceivedMessage)
       }
 
     },
