@@ -73,7 +73,7 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
 
-                    <div class="user" v-for="(element, index) in contacts ">
+                    <div class="user" v-for="(element, index) in contacts " @click="showChat(index)" :style="index == activeIndex ? {backgroundColor: '#e9ebeb'} :'' ">
 
                         <div class="img-container right-img-container">
                             <img :src="element.avatar" alt="">
@@ -95,18 +95,26 @@
                     <nav class="right-nav">
 
                         <div class="img-container right-img-container">
-                            <img src="img/avatar_io.jpg" alt="">
+                            <img :src="contacts[activeIndex].avatar" alt="">
 
                             <div class="text-right-container">
 
-                                <span>Sofia</span> 
-                                <span class="last-log">ultimo accesso</span>
+                                <span> {{contacts[activeIndex].name}} </span> 
+                                <span class="last-log">ultimo accesso oggi alle 12:00</span>
 
                             </div>
                         </div>
 
                         
                     </nav>
+
+                    <div class="messages">
+
+                        <div class="message" v-for="(element, index) in contacts[activeIndex].messages" :class="element.status == 'sent' ? 'message-sent' : 'message-received'">
+                            {{element.message}}
+                        </div>
+
+                    </div>
 
                     <section class="input-message-zone">
                         <div class="emoji">

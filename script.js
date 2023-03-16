@@ -166,8 +166,21 @@ const { createApp } = Vue
                   }
               ],
           }
-        ]
+        ],
+
+        // creo un indice che cambia qunado clicco su un utente
+        activeIndex : 0,
       
       }
-    }
+    },
+
+    methods: {
+      
+      // creo funzione che mi permette di visualizzare il contenuto della chat al click sull'utente
+
+      showChat(index){
+        this.activeIndex = index
+      }
+
+    },
   }).mount('#app')

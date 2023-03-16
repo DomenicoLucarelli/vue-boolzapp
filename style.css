@@ -152,6 +152,7 @@ img{
 .user{
     padding: 5px 0;
     border-bottom: 1px solid #eaeaea;
+    cursor: pointer;
 }
 
 
@@ -179,6 +180,25 @@ img{
 .text-right-container span:last-child{
     font-size: 12px;
     color: #b1b1b1;
+}
+
+.messages{
+    flex-grow: 1;
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.message{
+    width: 200px;
+    
+    padding: 8px;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: bold;
+
 }
 
 .input-message-zone{
@@ -214,6 +234,19 @@ img{
     align-items: center;
 }
 
+.active{
+    background-color: #e9ebeb;
+}
+
+.message-sent{
+    background-color: #d5f9ba;
+    align-self: flex-end;
+}
+
+.message-received{
+    background-color: white;
+    align-self: flex-start;
+}
 
 
 
