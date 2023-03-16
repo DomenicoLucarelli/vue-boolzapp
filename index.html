@@ -70,10 +70,10 @@
                         <div class="icon">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="name">
                     </div>
 
-                    <div class="user" v-for="(element, index) in contacts " @click="showChat(index)" :style="index == activeIndex ? {backgroundColor: '#e9ebeb'} :'' ">
+                    <div class="user" v-for="(element, index) in contacts " @click="showChat(index)" :style="index == activeIndex ? {backgroundColor: '#e9ebeb'} :'' " v-show="element.name.includes(name)">
 
                         <div class="img-container right-img-container">
                             <img :src="element.avatar" alt="">

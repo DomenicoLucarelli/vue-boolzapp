@@ -181,7 +181,9 @@ const { createApp } = Vue
             date: '',
             message: 'Ok',
             status: 'received'
-        }
+        },
+
+        name : ''
       
       }
     },
