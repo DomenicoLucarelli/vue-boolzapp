@@ -274,9 +274,11 @@ const { createApp } = Vue
             this.isDropdownVisible = true
         },
 
-        dropUp(){
+        dropUp(index){
         
             this.isDropdownVisible = false
+            this.contacts[this.activeIndex].messages[index].isClick = false
+
         },
 
     },

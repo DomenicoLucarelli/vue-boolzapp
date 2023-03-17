@@ -120,7 +120,7 @@
 
                     <div class="messages">
 
-                        <div class="message" v-for="(element, index) in contacts[activeIndex].messages" :class="element.status == 'sent' ? 'message-sent' : 'message-received'" @mouseover="dropDown()" @mouseleave="dropUp()">
+                        <div class="message" v-for="(element, index) in contacts[activeIndex].messages" :class="element.status == 'sent' ? 'message-sent' : 'message-received'" @mouseover="dropDown()" @mouseleave="dropUp(index)">
                             <span>{{element.message}}</span>
                             <span class="message-date">{{element.date}}</span>
 
