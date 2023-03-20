@@ -193,30 +193,7 @@ const { createApp } = Vue
         // creo un indice che cambia qunado clicco su un utente
         activeIndex : 0,
         
-        
-        
-
-        newMessage : {
-            date: `${new Date().toLocaleTimeString("it-IT",{
-                hour:'numeric',
-                minute:"numeric",
-
-            })}`,
-            message: '',
-            status: 'sent',
-            isClick: false
-        },
-
-        newReceivedMessage :{
-            date: `${new Date().toLocaleTimeString("it-IT",{
-                hour:'numeric',
-                minute:"numeric",
-
-            })}`,
-            message: 'Ok',
-            status: 'received',
-            isClick: false
-        },
+        myMessage:'',
 
         name : '',
 
@@ -236,22 +213,38 @@ const { createApp } = Vue
       },
     //   creo funzione che invia nell'array un oggetto al giusto indice
       send(){
-        this.contacts[this.activeIndex].messages.push(this.newMessage)
-        this.newMessage = {
+        let  newMessage = {
             date: `${new Date().toLocaleTimeString("it-IT",{
                 hour:'numeric',
                 minute:"numeric",
 
             })}`,
-            message: '',
-            status: 'sent'
-        }
+            message: this.myMessage,
+            status: 'sent',
+            isClick: false
+        };
+
+        this.contacts[this.activeIndex].messages.push(newMessage)
+
+        this.myMessage = ''
         // creo funzione timeout che al click di enter richiama la funzione receivedMessage
         setTimeout(this.receivedMessage,1000)
       },
     //   creo funzione che mi pusha nell'array al giusto indice un oggetto che è la risposta al mio messaggio
       receivedMessage(){
-        this.contacts[this.activeIndex].messages.push(this.newReceivedMessage)
+        
+        let newReceivedMessage ={
+            date: `${new Date().toLocaleTimeString("it-IT",{
+                hour:'numeric',
+                minute:"numeric",
+
+            })}`,
+            message: 'Ok',
+            status: 'received',
+            isClick: false
+        }
+
+        this.contacts[this.activeIndex].messages.push(newReceivedMessage)
       },
             
       isOnOrOff(index){

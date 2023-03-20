@@ -158,14 +158,14 @@ img{
 
 
 .my-container .app-container .right-app-container{
-    height: 100%;
+    
     width: 70%;
     background-image: url('img/mine.jpg');
 
     display: flex;
     
     flex-direction: column;
-    justify-content: space-between;
+    
 
 }
 
