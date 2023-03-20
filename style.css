@@ -202,8 +202,8 @@ img{
 
 .message{
     width: 250px;
-    
-    padding: 0 8px;
+    min-height: 3em;
+    padding: 10px;
     border-radius: 8px;
 
     font-size: 15px;
@@ -211,7 +211,7 @@ img{
     display: flex;
     justify-content: space-between;
 
-    height: 3em;
+    
     align-items: center;
 
     position: relative;

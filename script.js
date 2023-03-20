@@ -190,6 +190,15 @@ const { createApp } = Vue
           }
         ],
 
+        botMessages: [
+            'Che barba',
+            'Che noia',
+            'Noo telecamera...hai rotto il c',
+            'O me lo dai o me lo prendo',
+            'Signora i limoniii',
+            'Ma se le secchiate le tiriamo con i secchi, i cazzotti con cosa li tiriamo'
+        ],
+
         // creo un indice che cambia qunado clicco su un utente
         activeIndex : 0,
         
@@ -233,13 +242,16 @@ const { createApp } = Vue
     //   creo funzione che mi pusha nell'array al giusto indice un oggetto che è la risposta al mio messaggio
       receivedMessage(){
         
-        let newReceivedMessage ={
+        let n = Math.floor(Math.random() * ((this.botMessages.length - 1) - 0 + 1) ) + 0;
+        
+            
+         let newReceivedMessage ={
             date: `${new Date().toLocaleTimeString("it-IT",{
                 hour:'numeric',
                 minute:"numeric",
 
             })}`,
-            message: 'Ok',
+            message:this.botMessages[n],
             status: 'received',
             isClick: false
         }
@@ -273,6 +285,11 @@ const { createApp } = Vue
             this.contacts[this.activeIndex].messages[index].isClick = false
 
         },
+
+        // funzione che mi genera un numero casuale compreso tra zero e la lunghezza
+        // del array botMessage 
+
+        
 
     },
   }).mount('#app')
