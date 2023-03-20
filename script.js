@@ -233,11 +233,16 @@ const { createApp } = Vue
             isClick: false
         };
 
-        this.contacts[this.activeIndex].messages.push(newMessage)
+        if(newMessage.message != '' && newMessage.message != ' '){
 
-        this.myMessage = ''
-        // creo funzione timeout che al click di enter richiama la funzione receivedMessage
-        setTimeout(this.receivedMessage,1000)
+            this.contacts[this.activeIndex].messages.push(newMessage)
+            this.myMessage = ''
+            // creo funzione timeout che al click di enter richiama la funzione receivedMessage
+            setTimeout(this.receivedMessage,1000)
+        }else{
+            this.myMessage = ''
+
+        }
       },
     //   creo funzione che mi pusha nell'array al giusto indice un oggetto che è la risposta al mio messaggio
       receivedMessage(){
