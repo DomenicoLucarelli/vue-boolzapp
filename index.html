@@ -104,7 +104,7 @@
                             <div class="text-right-container">
 
                                 <span> {{contacts[activeIndex].name}} </span> 
-                                <span class="last-log">ultimo accesso oggi alle 12:00</span>
+                                <span class="last-log">ultimo accesso oggi alle {{contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date}} </span>
 
                             </div>
                         </div>
@@ -148,7 +148,10 @@
                             <input type="text" v-model="myMessage"  @keyup.enter="send()  " placeholder="Scrivi un messaggio">
                         </div>
                         <div class="mic">
-                            <i class="fa-solid fa-microphone"></i>
+                            
+                            <i class="fa-solid fa-microphone" :style=" myMessage != '' ? {display: 'none'}: {display:'inline-block'}"></i>
+                            <i class="fa-solid fa-paper-plane"  :style=" myMessage != '' ? {display: 'inline-block'}: {display:'none'}" @click="send()"></i>
+
                         </div>
                     </section>
 

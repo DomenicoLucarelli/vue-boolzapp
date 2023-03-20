@@ -198,6 +198,7 @@ img{
     display: flex;
     flex-direction: column;
     gap: 5px;
+    overflow-y: auto;
 }
 
 .message{
@@ -286,7 +287,10 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
+
+
 
 .active{
     background-color: #e9ebeb;
